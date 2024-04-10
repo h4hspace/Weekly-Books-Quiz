@@ -1,7 +1,8 @@
-/* style.css */
+/*style.css*/
 body {
     font-family: Arial, sans-serif;
-    text-align: center;
+    margin: 20px;
+    padding: 0;
     background-image: url('https://raw.githubusercontent.com/h4hspace/Weekly-Books-Quiz/main/new%20backgroung%20for%20site.webp'); /* Add your background image URL here */
     background-size: cover;
     background-position: center;
@@ -10,48 +11,36 @@ body {
     width: 100vw;
 }
 
+#welcome-screen,
 #quiz-container {
     max-width: 600px;
-    margin: 50px auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: auto;
+    text-align: center;
 }
 
-h1 {
-    color: #333;
+input[type="text"] {
+    padding: 10px;
+    margin-top: 20px;
+    width: calc(100% - 22px);
 }
 
-#question {
-    font-size: 20px;
-    margin-bottom: 20px;
+button {
+    padding: 10px 20px;
+    margin-top: 20px;
+    cursor: pointer;
 }
 
 .choice {
     display: block;
-    margin: 10px auto;
-    padding: 10px;
-    width: 200px;
-    background-color: #4caf50;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+    width: 100%;
+    margin: 10px 0;
+    background-color: #007bff;
+    color: white;
 }
 
-.choice:hover {
-    background-color: #45a049;
-}
-
-#progress {
+#restart-btn {
     margin-top: 20px;
 }
 
-#timer {
-    margin-top: 20px;
-    font-size: 18px;
-    color: #d32f2f;
-}
+/* Add more styling as needed */
 
