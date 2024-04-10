@@ -147,7 +147,7 @@
     }
 
     function startTimer() {
-        let timeRemaining = 10;
+        let timeRemaining = 15;
         timerContainer.innerText = `Time remaining: ${timeRemaining} seconds`;
 
         timerId = setInterval(() => {
