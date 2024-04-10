@@ -50,8 +50,8 @@ button:hover, .choice:hover, #start-btn:hover, #submit-name-btn:hover { /* Hover
 }
 
 h1, h2 {
-    color: #ffffff; /* Ensure contrast is sufficient */
-    font-size: 30px;
+    color: #000000; /* Ensure contrast is sufficient */
+    font-size: 15px;
 }
 
 #question, #feedback, #progress, #timer {
