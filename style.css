@@ -2,7 +2,7 @@
 body {
     font-family: Arial, sans-serif;
     text-align: center;
-    background-image: url('./images/new backgroung for site.webp'); /* Add your background image URL here */
+    background-image: url('https://raw.githubusercontent.com/h4hspace/Weekly-Books-Quiz/main/new%20backgroung%20for%20site.webp'); /* Add your background image URL here */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
