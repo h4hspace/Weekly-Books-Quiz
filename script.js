@@ -17,12 +17,12 @@
 
     const questions = [
        {
-    question: "Where were the apostles fishing when they couldnt catch fish all night?",
+    question: "Where were the apostles fishing when they couldn't catch fish all night?",
     choices: ["Sea of Sodom", "Sea of Galilee", "Sea of Helath", "Mediterranean Sea"],
     correctAnswer: "Sea of Galilee"
 },
 {
-    question: "How many days later did Jesus come to see Lazarus afte he died?",
+    question: "How many days later did Jesus come to see Lazarus after he died?",
     choices: ["Three Days", "Five Days", "Two Days", "Four Days"],
     correctAnswer: "Four Days"
 },
@@ -42,7 +42,7 @@
     correctAnswer: "Jericho"
 },
 {
-    question: "How many times more did Zacchaeus agree to pay back to those he cheated out on tax?",
+    question: "How many times more did Zacchaeus agree to pay back to those he cheated out on taxes?",
     choices: ["2 times more", "5 times more", "4 times more", "3 times more"],
     correctAnswer: "4 times more"
 },
