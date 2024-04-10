@@ -30,14 +30,37 @@ button {
     cursor: pointer;
 }
 
-.choice {
+.choice, #start-btn, #submit-name-btn {
     display: block;
-    width: 100%;
-    margin: 10px 0;
-    background-color: #007bff;
-    color: white;
-}
-
+    margin: 40px auto;
+    padding: 40px;
+    width: 200px;
+    background-color: #b7b510;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: background-color 0.3s;
+        }
+.choice:hover, #start-btn:hover, #submit-name-btn:hover {
+    background-color: #d4d4cec0;
+        }
+#progress, #timer {
+    margin-top: 40px;
+    font-size: 36px;
+        }
+#feedback {
+    color: #d32f2f;
+    font-weight: bold;
+        }
+#name-input {
+    margin: 40px auto;
+    padding: 10px;
+    width: 250px;
+    display: block;
+    font-size: 20px;
+        }
 #restart-btn {
     margin-top: 20px;
 }
