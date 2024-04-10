@@ -14,7 +14,7 @@ body {
 input[type="text"], #name-input {
     padding: 10px;
     margin-top: 20px;
-    width: calc(100% - 22px); /* For input */
+    width: calc(100% - 20px); /* For input */
     display: block; /* Added for #name-input */
     margin: 40px auto; /* Added for #name-input */
     font-size: 20px; /* Added for #name-input */
@@ -25,9 +25,9 @@ button, .choice, #start-btn, #submit-name-btn, #restart-btn { /* Consolidated bu
     margin-top: 20px;
     cursor: pointer;
     display: block;
-    margin: 40px auto;
+    margin: 20px auto;
     padding: 40px;
-    width: 200px;
+    width: 100px;
     background-color: #b7b510;
     color: #fff;
     border: none;
@@ -41,9 +41,9 @@ button:hover, .choice:hover, #start-btn:hover, #submit-name-btn:hover { /* Hover
 }
 
 #quiz-container, #welcome-screen {
-    max-width: 600px;
-    margin: 50px auto;
-    padding: 20px;
+    max-width: 300px;
+    margin: 25px auto;
+    padding: 10px;
     background-color: #faf9f3;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -58,7 +58,7 @@ h1, h2 {
     font-size: 10px; /* For question and feedback */
     margin-bottom: 10px; /* For question and feedback */
     margin-top: 20px; /* For progress and timer */
-    font-size: 25px; /* For progress and timer */
+    font-size: 20px; /* For progress and timer */
 }
 
 #feedback {
