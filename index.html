@@ -9,7 +9,7 @@
 <body>
 
 <div id="quiz-container">
-    <h1>Welcome to the Quiz Game!</h1>
+    <h1>Welcome to this week's quiz!</h1>
     <button id="start-btn">Start</button>
     <div id="question"></div>
     <div id="choices"></div>
@@ -80,6 +80,16 @@
     correctAnswer: "Sea of Galilee"
 }
     ];
+    submitNameButton.addEventListener('click', () => {
+        playerName = nameInput.value.trim();
+        if (playerName) {
+            welcomeScreen.style.display = 'none';
+            quizContainer.style.display = '';
+            playerNameDisplay.innerText = `Player: ${playerName}`;
+        } else {
+            alert('Please enter your name to start the quiz.');
+        }
+    });
 
     function startGame() {
         startButton.style.display = 'none';
