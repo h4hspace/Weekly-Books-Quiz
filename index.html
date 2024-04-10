@@ -5,27 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interactive Quiz Game</title>
     <link rel="stylesheet" href="style.css">
-    
 </head>
 <body>
 
-<div id="welcome-screen">
+<section id="welcome-screen">
     <h1>Welcome to the Interactive Quiz Game!</h1>
-    <input type="text" id="name-input" placeholder="Enter your name">
-    <button id="submit-name-btn">Submit</button>
-</div>
+    <input type="text" id="name-input" placeholder="Enter your name" aria-label="Name Input">
+    <button id="submit-name-btn" type="button">Submit</button>
+</section>
 
-<div id="quiz-container" style="display:none;">
+<section id="quiz-container" class="hidden">
     <h1>Welcome to this week's quiz!</h1>
     <h2 id="player-name"></h2>
-    <button id="start-btn">Start</button>
+    <button id="start-btn" type="button">Start</button>
     <div id="question"></div>
-    <div id="choices"></div>
+    <ul id="choices"></ul>
     <div id="progress"></div>
     <div id="timer"></div>
     <div id="feedback"></div>
-    <button id="restart-btn" style="display:none;">Restart Quiz</button>
-</div>
+    <button id="restart-btn" class="hidden" type="button">Restart Quiz</button>
+</section>
 
 <script src="script.js"></script>
 
