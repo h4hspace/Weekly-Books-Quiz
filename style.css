@@ -10,12 +10,6 @@ body {
     height: 200px;
     width: 100vw;
 }
-
-#welcome-screen,
-#quiz-container {
-    max-width: 600px;
-    margin: auto;
-    text-align: center;
 }
 
 input[type="text"] {
@@ -29,7 +23,21 @@ button {
     margin-top: 20px;
     cursor: pointer;
 }
-
+#quiz-container, #welcome-screen {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #faf9f3;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+h1, h2 {
+    color: #333;
+    font-size: 30px;
+        }
+#question, #feedback {
+    font-size: 15px;
+    margin-bottom: 20px;
 .choice, #start-btn, #submit-name-btn {
     display: block;
     margin: 40px auto;
