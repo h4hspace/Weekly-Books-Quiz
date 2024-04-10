@@ -21,18 +21,16 @@ input[type="text"], #name-input {
 }
 
 button, .choice, #start-btn, #submit-name-btn, #restart-btn { /* Consolidated button and choice styles */
-    padding: 10px 20px;
-    margin-top: 20px;
-    cursor: pointer;
     display: block;
-    margin: 20px auto;
-    padding: 40px;
-    width: 100px;
+    margin: 20px auto; /* Reduced margin for tighter grouping */
+    padding: 20px; /* Reduced padding for smaller blocks */
+    width: 150px; /* Reduced width for smaller blocks */
     background-color: #b7b510;
     color: #fff;
     border: none;
-    border-radius: 10px;
-    font-size: 15px;
+    border-radius: 5px; /* Smaller radius for a subtler effect */
+    cursor: pointer;
+    font-size: 14px; /* Adjust font size as needed */
     transition: background-color 0.3s;
 }
 
