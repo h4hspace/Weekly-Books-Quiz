@@ -1,7 +1,7 @@
 /*style.css*/
 body {
     font-family: Arial, sans-serif;
-    margin: 20px;
+    margin: 0;
     padding: 0;
     background-image: url('https://raw.githubusercontent.com/h4hspace/Weekly-Books-Quiz/main/new%20backgroung%20for%20site.webp'); /* Background image URL */
     background-size: cover;
@@ -9,6 +9,8 @@ body {
     background-repeat: no-repeat;
     min-height: 100vh; /* Adjusted for full viewport height coverage */
     width: 100vw;
+    display: flex;
+    flex-direction: column;
 }
 
 input[type="text"], #name-input {
