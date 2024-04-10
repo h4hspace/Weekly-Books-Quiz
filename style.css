@@ -38,6 +38,7 @@ h1, h2 {
 #question, #feedback {
     font-size: 15px;
     margin-bottom: 20px;
+}
 .choice, #start-btn, #submit-name-btn {
     display: block;
     margin: 40px auto;
