@@ -39,6 +39,78 @@ document.addEventListener('DOMContentLoaded', () => {
         restartButton.style.display = 'none';
     });
 
+        function startGame() {
+        startButton.style.display = 'none';
+        showQuestion();
+    }
+
+    function showQuestion() {
+        const currentQuestion = questions[currentQuestionIndex];
+        questionContainer.innerText = currentQuestion.question;
+
+        choiceContainer.innerHTML = '';
+        currentQuestion.choices.forEach(choice => {
+            const button = document.createElement('button');
+            button.innerText = choice;
+            button.classList.add('choice');
+            button.addEventListener('click', selectAnswer);
+            choiceContainer.appendChild(button);
+        });
+
+        updateProgress();
+        startTimer();
+    }
+
+    function selectAnswer(event) {
+        if (timerId) {
+            clearTimeout(timerId);
+        }
+        
+        const selectedChoice = event.target.innerText;
+        const currentQuestion = questions[currentQuestionIndex];
+        
+        if (selectedChoice === currentQuestion.correctAnswer) {
+            score++;
+        }
+
+        nextQuestion();
+    }
+
+    function nextQuestion() {
+        currentQuestionIndex++;
+        if (currentQuestionIndex < questions.length) {
+            showQuestion();
+        } else {
+            endGame();
+        }
+    }
+
+    function endGame() {
+        questionContainer.innerText = `Your Score: ${score} / ${questions.length}`;
+        choiceContainer.innerHTML = '';
+        progressContainer.innerText = '';
+        timerContainer.innerText = '';
+    }
+
+    function updateProgress() {
+        progressContainer.innerText = `Question ${currentQuestionIndex + 1} / ${questions.length}`;
+    }
+
+    function startTimer() {
+        let timeRemaining = 10;
+        timerContainer.innerText = `Time remaining: ${timeRemaining} seconds`;
+
+        timerId = setInterval(() => {
+            timeRemaining--;
+            timerContainer.innerText = `Time remaining: ${timeRemaining} seconds`;
+            if (timeRemaining <= 0) {
+                clearInterval(timerId);
+                nextQuestion();
+            }
+        }, 1000);
+    }
+
+    startButton.addEventListener('click', startGame);
     // Define functions like startGame, showQuestion, selectAnswer, nextQuestion, endGame, updateProgress, startTimer here
 });
 
