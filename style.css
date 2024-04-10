@@ -41,9 +41,9 @@ button:hover, .choice:hover, #start-btn:hover, #submit-name-btn:hover { /* Hover
 }
 
 #quiz-container, #welcome-screen {
-    max-width: 300px;
-    margin: 25px auto;
-    padding: 10px;
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
     background-color: #faf9f3;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
