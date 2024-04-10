@@ -1,4 +1,5 @@
-document.addEventListener('DOMContentLoaded', () => {
+/*script.js*/
+    document.addEventListener('DOMContentLoaded', () => {
     const submitNameButton = document.getElementById('submit-name-btn');
     const nameInput = document.getElementById('name-input');
     const welcomeScreen = document.getElementById('welcome-screen');
