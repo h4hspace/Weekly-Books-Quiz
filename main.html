@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Quiz Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+        }
+        #quiz-container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        #question {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        .choice {
+            display: block;
+            margin: 10px auto;
+            padding: 10px;
+            width: 200px;
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .choice:hover {
+            background-color: #45a049;
+        }
+        #progress {
+            margin-top: 20px;
+        }
+        #timer {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #d32f2f;
+        }
+    </style>
+</head>
+<body>
+
+<div id="quiz-container">
+    <h1>Welcome to the Quiz Game!</h1>
+    <button id="start-btn">Start</button>
+    <div id="question"></div>
+    <div id="choices"></div>
+    <div id="progress"></div>
+    <div id="timer"></div>
+</div>
+
+<script>
+    const startButton = document.getElementById('start-btn');
+    const questionContainer = document.getElementById('question');
+    const choiceContainer = document.getElementById('choices');
+    const progressContainer = document.getElementById('progress');
+    const timerContainer = document.getElementById('timer');
+
+    let currentQuestionIndex = 0;
+    let score = 0;
+    let timerId;
+
+    const questions = [
+    {
+    question: "Where were the apostles fishing when they couldnt catch fish all night?",
+    choices: ["Sea of Sodom", "Sea of Galilee", "Sea of Helath", "Mediterranean Sea"],
+    correctAnswer: "Sea of Galilee"
+},
+{
+    question: "How many days later did Jesus come to see Lazarus afte he died?",
+    choices: ["Three Days", "Five Days", "Two Days", "Four Days"],
+    correctAnswer: "Four Days"
+},
+{
+    question: "What was the king's name in Esther's story?",
+    choices: ["Nebucadnezar", "Ahab", "Xerxes", "Josiah"],
+    correctAnswer: "Xerxes"
+},
+{
+    question: "How many days did Esther pray for before going to see the king?",
+    choices: ["7 days", "2 days", "4 days", "3 days"],
+    correctAnswer: "3 days"
+},
+{
+    question: "In what town did Zacchaeus live?",
+    choices: ["Damascus", "Jericho", "Capernaum", "Bethlehem"],
+    correctAnswer: "Jericho"
+},
+{
+    question: "How many times more did Zacchaeus agree to pay back to those he cheated out on tax?",
+    choices: ["2 times more", "5 times more", "4 times more", "3 times more"],
+    correctAnswer: "4 times more"
+},
+{
+    question: "What was the montain name where Abraham went to sacrifice Isaac?",
+    choices: ["Mount Zion", "Mount Moriah", "Mount Carmel", "Mount Tabor"],
+    correctAnswer: "Mount Moriah"
+},
+{
+    question: "What town was the paralytic man from?",
+    choices: ["Capernaum", "Damascus", "Bethsaida", "Hebron"],
+    correctAnswer: "Capernaum"
+},
+{
+    question: "What was the name of the king that ruled during Daniel times in the Medo-Persian Empire?",
+    choices: ["Hezekiah", "Ahab", "Darius", "Nebucadnezar"],
+    correctAnswer: "Darius"
+},
+{
+    question: "What sea did Jesus cross before the 2 fish and 5 breads miracle?",
+    choices: ["Sea of Sodom", "Sea of Tiberias", "Sea of Galilee", "Mediteranean Sea"],
+    correctAnswer: "Sea of Galilee"
+}
+    ];
+
+    function startGame() {
+        startButton.style.display = 'none';
+        showQuestion();
+    }
+
+    function showQuestion() {
+        const currentQuestion = questions[currentQuestionIndex];
+        questionContainer.innerText = currentQuestion.question;
+
+        choiceContainer.innerHTML = '';
+        currentQuestion.choices.forEach(choice => {
+            const button = document.createElement('button');
+            button.innerText = choice;
+            button.classList.add('choice');
+            button.addEventListener('click', selectAnswer);
+            choiceContainer.appendChild(button);
+        });
+
+        updateProgress();
+        startTimer();
+    }
+
+    function selectAnswer(event) {
+        if (timerId) {
+            clearTimeout(timerId);
+        }
+        
+        const selectedChoice = event.target.innerText;
+        const currentQuestion = questions[currentQuestionIndex];
+        
+        if (selectedChoice === currentQuestion.correctAnswer) {
+            score++;
+        }
+
+        nextQuestion();
+    }
+
+    function nextQuestion() {
+        currentQuestionIndex++;
+        if (currentQuestionIndex < questions.length) {
+            showQuestion();
+        } else {
+            endGame();
+        }
+    }
+
+    function endGame() {
+        questionContainer.innerText = `Your Score: ${score} / ${questions.length}`;
+        choiceContainer.innerHTML = '';
+        progressContainer.innerText = '';
+        timerContainer.innerText = '';
+    }
+
+    function updateProgress() {
+        progressContainer.innerText = `Question ${currentQuestionIndex + 1} / ${questions.length}`;
+    }
+
+    function startTimer() {
+        let timeRemaining = 10;
+        timerContainer.innerText = `Time remaining: ${timeRemaining} seconds`;
+
+        timerId = setInterval(() => {
+            timeRemaining--;
+            timerContainer.innerText = `Time remaining: ${timeRemaining} seconds`;
+            if (timeRemaining <= 0) {
+                clearInterval(timerId);
+                nextQuestion();
+            }
+        }, 1000);
+    }
+
+    startButton.addEventListener('click', startGame);
+</script>
+
+</body>
+</html>
