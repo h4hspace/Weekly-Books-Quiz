@@ -3,43 +3,27 @@ body {
     font-family: Arial, sans-serif;
     margin: 20px;
     padding: 0;
-    background-image: url('https://raw.githubusercontent.com/h4hspace/Weekly-Books-Quiz/main/new%20backgroung%20for%20site.webp'); /* Add your background image URL here */
+    background-image: url('https://raw.githubusercontent.com/h4hspace/Weekly-Books-Quiz/main/new%20backgroung%20for%20site.webp'); /* Background image URL */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 200px;
+    min-height: 100vh; /* Adjusted for full viewport height coverage */
     width: 100vw;
 }
-}
 
-input[type="text"] {
+input[type="text"], #name-input {
     padding: 10px;
     margin-top: 20px;
-    width: calc(100% - 22px);
+    width: calc(100% - 22px); /* For input */
+    display: block; /* Added for #name-input */
+    margin: 40px auto; /* Added for #name-input */
+    font-size: 20px; /* Added for #name-input */
 }
 
-button {
+button, .choice, #start-btn, #submit-name-btn, #restart-btn { /* Consolidated button and choice styles */
     padding: 10px 20px;
     margin-top: 20px;
     cursor: pointer;
-}
-#quiz-container, #welcome-screen {
-    max-width: 600px;
-    margin: 50px auto;
-    padding: 20px;
-    background-color: #faf9f3;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-h1, h2 {
-    color: #ffffff;
-    font-size: 30px;
-        }
-#question, #feedback {
-    font-size: 15px;
-    margin-bottom: 20px;
-}
-.choice, #start-btn, #submit-name-btn {
     display: block;
     margin: 40px auto;
     padding: 40px;
@@ -48,31 +32,40 @@ h1, h2 {
     color: #fff;
     border: none;
     border-radius: 10px;
-    cursor: pointer;
     font-size: 15px;
     transition: background-color 0.3s;
-        }
-.choice:hover, #start-btn:hover, #submit-name-btn:hover {
+}
+
+button:hover, .choice:hover, #start-btn:hover, #submit-name-btn:hover { /* Hover effects */
     background-color: #d4d4cec0;
-        }
-#progress, #timer {
-    margin-top: 40px;
-    font-size: 36px;
-        }
+}
+
+#quiz-container, #welcome-screen {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #faf9f3;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+    color: #ffffff; /* Ensure contrast is sufficient */
+    font-size: 30px;
+}
+
+#question, #feedback, #progress, #timer {
+    font-size: 15px; /* For question and feedback */
+    margin-bottom: 20px; /* For question and feedback */
+    margin-top: 40px; /* For progress and timer */
+    font-size: 36px; /* For progress and timer */
+}
+
 #feedback {
     color: #d32f2f;
     font-weight: bold;
-        }
-#name-input {
-    margin: 40px auto;
-    padding: 10px;
-    width: 250px;
-    display: block;
-    font-size: 20px;
-        }
-#restart-btn {
-    margin-top: 20px;
 }
 
-/* Add more styling as needed */
-
+.hidden {
+    display: none;
+}
