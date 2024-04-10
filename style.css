@@ -55,10 +55,10 @@ h1, h2 {
 }
 
 #question, #feedback, #progress, #timer {
-    font-size: 15px; /* For question and feedback */
-    margin-bottom: 20px; /* For question and feedback */
-    margin-top: 40px; /* For progress and timer */
-    font-size: 36px; /* For progress and timer */
+    font-size: 10px; /* For question and feedback */
+    margin-bottom: 10px; /* For question and feedback */
+    margin-top: 20px; /* For progress and timer */
+    font-size: 25px; /* For progress and timer */
 }
 
 #feedback {
