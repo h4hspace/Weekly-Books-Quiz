@@ -121,8 +121,10 @@
         
         if (selectedChoice === currentQuestion.correctAnswer) {
             score++;
-        }
-
+        } else {
+        // Store the index or question of incorrect answers
+        incorrectAnswers.push(currentQuestionIndex);
+    }
         nextQuestion();
     }
 
@@ -135,12 +137,29 @@
         }
     }
 
-    function endGame() {
-        questionContainer.innerText = `Your Score: ${score} / ${questions.length}`;
-        choiceContainer.innerHTML = '';
-        progressContainer.innerText = '';
-        timerContainer.innerText = '';
+ function endGame() {
+    questionContainer.innerText = `Your Score: ${score} / ${questions.length}`;
+    choiceContainer.innerHTML = '';
+    progressContainer.innerText = '';
+    timerContainer.innerText = '';
+
+    // Display incorrect questions with correct answers
+    if (incorrectAnswers.length > 0) {
+        const resultsContainer = document.createElement('div');
+        resultsContainer.innerHTML = '<h3>You answered the following questions incorrectly:</h3>';
+        incorrectAnswers.forEach((index) => {
+            const question = questions[index];
+            const resultItem = document.createElement('div');
+            resultItem.innerHTML = `<strong>Q: ${question.question}</strong><br/>Correct Answer: ${question.correctAnswer}`;
+            resultsContainer.appendChild(resultItem);
+        });
+        quizContainer.appendChild(resultsContainer);
+    } else {
+        const perfectScoreMessage = document.createElement('div');
+        perfectScoreMessage.innerHTML = '<h3>Congratulations! You answered all questions correctly!</h3>';
+        quizContainer.appendChild(perfectScoreMessage);
     }
+}
 
     function updateProgress() {
         progressContainer.innerText = `Question ${currentQuestionIndex + 1} / ${questions.length}`;
