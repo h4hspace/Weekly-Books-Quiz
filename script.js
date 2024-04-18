@@ -111,22 +111,24 @@
         startTimer();
     }
 
-    function selectAnswer(event) {
-        if (timerId) {
-            clearTimeout(timerId);
-        }
-        
-        const selectedChoice = event.target.innerText;
-        const currentQuestion = questions[currentQuestionIndex];
-        
-        if (selectedChoice === currentQuestion.correctAnswer) {
-            score++;
-        } else {
-        // Store the index or question of incorrect answers
+function selectAnswer(event) {
+    if (timerId) {
+        clearTimeout(timerId); // Stop the timer
+    }
+
+    const selectedChoice = event.target.innerText;
+    const currentQuestion = questions[currentQuestionIndex];
+
+    if (selectedChoice === currentQuestion.correctAnswer) {
+        score++;
+    } else {
+        // Store the index of the incorrect answer
         incorrectAnswers.push(currentQuestionIndex);
     }
-        nextQuestion();
-    }
+
+    // Move to the next question immediately
+    nextQuestion();
+}
 
     function nextQuestion() {
         currentQuestionIndex++;
